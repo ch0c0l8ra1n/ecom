@@ -10,6 +10,7 @@ body{
 	top: 0px;
 	width:100%;
 	z-index: 100;
+	box-shadow: 2px 2px 2px grey;
 }
 
 .navBar a,.navBar div{
@@ -29,6 +30,7 @@ body{
 	text-decoration: none;
 	font-size: 17px;
 	border-radius: 10px;
+	z-index: 200;
 }
 
 .navBar a:hover{
@@ -38,6 +40,7 @@ body{
 
 .navBar .logo{
 	height: 50px;
+	z-index: 200;
 }
 
 .navBar input[type=text]{
@@ -46,6 +49,7 @@ body{
 	border: none;
 	width:100px;
 	transition: width 1s ease-in-out;
+	border-radius: 5px 0px 0px 5px;
 
 }
 
@@ -55,6 +59,7 @@ body{
 
 .navBar .search-container{
 	display: inline-flex;
+	z-index: 200;
 	box-shadow: 2px 2px 2px grey;
 }
 
@@ -67,6 +72,7 @@ body{
   font-size: 17px;
   border: none;
   cursor: pointer;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .navBar .search-container button:hover {
