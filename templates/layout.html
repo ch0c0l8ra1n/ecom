@@ -2,7 +2,7 @@
 
 <html lang="en">
 	<head>
-		<title>DokoKart!</title>
+		<title>DokoKart!: {% block title %}{% endblock %}</title>
 		<!-- Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta charset="utf-8">
@@ -10,10 +10,45 @@
 		<!--  BootStrap CSS  -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
+		<!-- font awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		{% block pageJS %}{% endblock %}
+		<!--custom css-->
+		<link href="{{ url_for('static',filename='styles.css') }}" rel="stylesheet">
+
 
 	</head>
 	<body>
-		
+		<!-- Navigation Bar -->
+		<header>
+			<div class="navBar">
+				<!-- Logo -->
+				<a class="" href="/"><img class="logo" src="{{ url_for('static',filename='images/logo.png') }}"></a>
+
+				<!-- Search Box -->
+				<div class="search-container">
+					<form action="/search">
+						<input type="text" name="search" placeholder="Search...">
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+				
+
+				<!-- temporary div for right float -->
+				<div class="fright">
+				<!-- LogIn -->
+				<a href="/login">Log In</a>
+
+				<!-- SignUp -->
+				<a href="/signup">Sign Up</a>
+
+				<!-- Cart -->
+				<a href="/cart"><i class="fa fa-shopping-cart"></i></a>
+			</div>
+			</div>
+			
+		</header>
 
 
 
