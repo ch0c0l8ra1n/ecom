@@ -1,5 +1,4 @@
 body{
-	display: flex;
 	background-color: #eee;
 }
 
@@ -11,7 +10,7 @@ body{
 	top: 0px;
 	width:100%;
 	z-index: 100;
-	box-shadow: 2px 2px 2px grey;
+	box-shadow: 2px 2px 1px grey;
 }
 
 .navBar a,.navBar div{
@@ -22,6 +21,7 @@ body{
 	float: right;
 	margin-top: 10px;
 	margin-right: 20px;
+	font-size: 30px;
 }
 
 .navBar a{
@@ -29,8 +29,9 @@ body{
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 17px;
-	border-radius: 10px;
+	font-size: 20px;
+	font-weight: 500;
+	border-radius: 5px;
 	z-index: 200;
 }
 
@@ -48,8 +49,8 @@ body{
 	padding: 6px;
 	font-size: 20px;
 	border: none;
-	width:100px;
-	transition: width 1s ease-in-out;
+	width:200px;
+	transition: width 0.5s ease-in-out;
 	border-radius: 5px 0px 0px 5px;
 
 }
@@ -81,4 +82,18 @@ body{
   background-color: rgb(255,191,0);
 }
 
+
+.cateogories{
+	margin-top: 80px;
+	width:100%;
+	background-color: rgb(140,200,70);
+	height:30px;
+	color: white;
+	font-size: 17px;
+}
+
+#unique{
+	position: relative;
+	top:0px;
+}
 
