@@ -7,8 +7,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta charset="utf-8">
 
-		<!--  BootStrap CSS  -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 		<!-- font awesome -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,70 +14,74 @@
 		{% block pageCSS %}{% endblock %}
 		<!--custom css-->
 		<link href="{{ url_for('static',filename='layout.css') }}" rel="stylesheet">
-
-
 	</head>
 	<body>
-		<!-- Navigation Bar -->
-		<header>
-			<div class="navBar">
-				<!-- Logo -->
-				<a class="" href="/"><img class="logo" src="{{ url_for('static',filename='images/logo.png') }}"></a>
-
-				<!-- Search Box -->
-				<div class="search-container">
-					<form action="/search">
-						<input type="text" name="search" placeholder="Search...">
-						<button type="submit"><i class="fa fa-search"></i></button>
-					</form>
-				</div>
-				
-
-				<!-- temporary div for right float -->
-				<div class="fright">
-					<div id="account">
-						
-					</div>
-
-					<!-- Cart -->
-					<a href="/cart"><i class="fa fa-shopping-cart"></i></a>
-				</div>
-			</div>
-		</header>
-		<div class="cateogories">
-		TODO: Cateogories
+		<div id="modalAccount" class="modalBox">
+		  <div>
+		    <div>
+		      <button onclick="closeModal()" class="xBut">X</button>
+		    </div>
+		    <div>
+		      <img class="logo mLogo center" src="http://www.parajuli.me/static/images/logo.png">
+		    </div>
+		    
+		    <form id="lF" class="loginForm" action="/login" method="post">
+		      <div>
+		        <input class="mBoxes" pattern=".*@.*[.].*" name="email" placeholder="Email">
+		      </div>
+		      <div>
+		        <input class="mBoxes" pattern=".{6}" name="pwd" type="password" placeholder="Password">
+		      </div>
+		      <div>
+		        <button type="submit" methos="post" class="mLogin center">Log In</button>
+		      </div>
+		      <div style="text-align:center">
+		        <span>Don't have an account yet? <a href="javascript:;" onClick="register()" class="regText">Register</a></span>
+		      </div>
+		    </form>
+		    <form id="rF" class="registrationForm" action="/register" method="post">
+		      <div>
+		        <input class="mBoxes" name="name" placeholder="Name">
+		      </div>
+		      <div>
+		        <input class="mBoxes" pattern="9[0-9]*.{9}" name="name" placeholder="Phone No">
+		      </div>
+		      <div>
+		        <input class="mBoxes" pattern=".*@.*[.].*" name="email" placeholder="Email">
+		      </div>
+		      <div>
+		        <input class="mBoxes" pattern=".{6}" name="phone" placeholder="Password" type="password">
+		      </div>
+		      <div>
+		        <button type="submit" methos="post" class="mLogin center">Sign Up</button>
+		      </div>
+		      <div style="text-align:center">
+		        <span>Aready have an account? <a href="javascript:;" onClick="login()" class="regText">Log In</a></span>
+		      </div>
+		    </form>
+		  </div>
 		</div>
 
-		<div>
-			{% block unique %}{% endblock %}
+		<div class="navBar">
+		  <a>
+		    <div class="logo">
+		      <img class="logopng" src="http://www.parajuli.me/static/images/logo.png">
+		    </div>
+		  </a>
+		  <div class="search">
+		    <form>
+		      <input class="sBox" placeholder="Search...">
+		      <button class="sButton" type="Submit"><i class="sIcon fa fa-search"></i></button>
+		      </form>
+		  </div>
+		  <div id="accounts">
+		  </div>
+		  <a class="cart">
+		    <i class="fa fa-shopping-cart"></i>
+		  </a>
 		</div>
-
-
-
-
-		<!-- jQuery, Tether and BootStrap js -->
-		<script src="https://code.jquery.com/jquery-3.1.0.js" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-		<script type="text/javascript">
-			var loggedIn = false;//{% block loginStatus %}{% endblock %};
-			var temp = document.getElementById("account");
-			if (loggedIn){
-				temp.innerHTML = `
-				<!-- User -->
-				<a href="/account"><i class="fa fa-user-circle"></i></a>
-				`
-
-			}
-			else{
-				temp.innerHTML = `
-				<!-- LogIn -->
-				<a href="/login">Log In</a>
-
-				<!-- SignUp -->
-				<a href="/signup">Sign Up</a>`
-			}
-		</script>
+		{% block unique %}{% endblock %}
+		<script src="{{ url_for('static' , filename='layout.js') }}"></script>
 		{% block pageJS %}{% endblock %}
 	</body>
 

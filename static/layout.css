@@ -1,98 +1,235 @@
-body{
-	background-color: #eee;
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Helvetica, Arial , sans-serif;
+  color : #333;
 }
 
 .navBar{
-	overflow: hidden;
-	background-color: rgb(140,200,70);
-	position: fixed;
-	top: 0px;
-	width:100%;
-	z-index: 100;
-	box-shadow: 2px 2px 1px grey;
+  border-bottom: 1px solid grey;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  background-color: #fff;
+  align-items: stretch;
+  padding-right: 10px;
+  font-size: 20px;
 }
 
-.navBar a,.navBar div{
-	display: inline-block;
+.navBar a, .navBar div{
+  margin: auto;
+  text-decoration:none;
 }
 
-.fright{
-	float: right;
-	margin-top: 10px;
-	margin-right: 20px;
-	font-size: 30px;
+.logo{
+  height: 50px;
 }
 
-.navBar a{
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	font-size: 20px;
-	font-weight: 500;
-	border-radius: 5px;
-	z-index: 200;
+.logopng{
+  margin: 0px;
+  height: 50px;
 }
 
-.navBar a:hover{
-	background-color: rgb(130,180,50);
+.search{
+  flex-grow: 0.9;
+  display:flex;
 }
 
-
-.navBar .logo{
-	height: 50px;
-	z-index: 200;
+.search form{
+  display: flex;
+  flex-grow: 1;
+  border: 1px solid grey;
+  box-shadow: 0 4px 6px -6px grey;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
-.navBar input[type=text]{
-	padding: 6px;
-	font-size: 20px;
-	border: none;
-	width:200px;
-	transition: width 0.5s ease-in-out;
-	border-radius: 5px 0px 0px 5px;
-
+.sBox{
+  flex-grow: 1;
+  font-size: 26px;
+  font-family: inherit;
+  font-weight: 300;
+  border-radius: 5px;
+  border: 0px;
+  padding: 5px;
+  outline:none;
 }
-
-.navBar input[type=text]:focus{
-	width:300px;
-}
-
-.navBar .search-container{
-	display: inline-flex;
-	z-index: 200;
-	box-shadow: 2px 2px 2px grey;
+.search < .sBox:focus {
+  border: 2px solid grey;
 }
 
 
-.navBar .search-container button {
+.sButton{
+  background-color:transparent;
+  border: 0;
+}
+
+.sIcon{
+  margin-right : 7px;
+  margin-left : 7px;
+  font-size: 24px;
+}
+.sIcon:hover{
+  color:blue;
+}
+
+i{
+  font-size: 24px;
+}
+
+#accounts{
+  display: flex;
+  align-items: stretch;
+}
+
+#accounts a{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: #333;
+  text-decoration:none;
+  flex-grow: 1;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+#accounts a:hover{
+  border: 1px solid grey;
+}
+
+.cart{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+}
+
+.cart:hover{
+  border: 1px solid grey;
+}
+
+
+.modalBox{
+  display: flex;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modalBox > div{
+  padding: 30px;
+  padding-bottom: 20px;
+  margin: auto;
+  background-color: #fff;
+  border: 1px solid black;
+  box-shadow: 0px 8px 6px -6px black;
+  border-radius: 10px;
+}
+
+
+.loginForm > div , .registrationForm > div{
+  margin: 20px;
+}
+
+.mBoxes{
+  font-size: 24px;
+  border: 0.7px solid grey;
+  border-radius:3px;
+  padding: 3px;
+  transition: all 0.5s ease;
+  font-weight: 300;
+}
+
+.mLogo{
+  border: 1px solid grey;
+  width: 70px;
+  height: 70px;
+  border-radius: 150px;
+  transition: 0.5s all ease;
+}
+
+.mLogo:hover{
+  border: 2px solid grey;
+  width: 75px;
+  height: 75px;
+}
+
+.center{
+  display: block;
+  margin: auto;
+}
+
+.mBoxes:focus{
+  padding: 10px;
+  outline: none;
+  border: 1px solid grey;
+}
+
+.mLogin{
+  background-color: transparent;
+  border: 1px solid grey;
+  font-size: 24px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.mLogin:hover{
+  border: 1.5px solid grey;
+}
+
+.regText{
+  color: #333;
+}
+
+.loginForm{
+  transition: all 1s ease;
+  max-height: 0px;
+  display: block;
+  overflow: hidden;
+}
+
+.registrationForm{
+  display: block;
+  max-height: 400px;
+  transition: all 1s ease;
+  overflow: hidden;
+}
+
+::placeholder {
+  color: #333;
+  opacity: 1; 
+}
+
+.xBut{
+  background-color: #ffffff;
+  border: 1px solid grey;
+  font-size: 24px;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 30px;
+  position:relative;
+  top: -55px;
+  right: -40px;
   float: right;
-  padding: 8.2px 10px;
-  margin-right: 0px;
-  background: white;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-  border-radius: 0px 5px 5px 0px;
+  transition: all 0.5s ease;
 }
 
-.navBar .search-container button:hover {
-  color: blue;
-  background-color: rgb(255,191,0);
+.xBut:hover{
+  font-size: 30px;
+  border: 2px solid grey;
 }
-
-
-.cateogories{
-	margin-top: 80px;
-	width:100%;
-	background-color: rgb(140,200,70);
-	height:30px;
-	color: white;
-	font-size: 17px;
-}
-
-#unique{
-	position: relative;
-	top:0px;
-}
-
