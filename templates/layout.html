@@ -18,7 +18,7 @@
 	<body>
 		<div id="modalAccount" class="modalBox">
 		  <div>
-		    <div>
+		    <div class="xPar">
 		      <button onclick="closeModal()" class="xBut">X</button>
 		    </div>
 		    <div>
@@ -27,10 +27,10 @@
 		    
 		    <form id="lF" class="loginForm" action="/login" method="post">
 		      <div>
-		        <input class="mBoxes" pattern=".*@.*[.].*" name="email" placeholder="Email">
+		        <input class="mBoxes" pattern=".*@.*[.].*" name="email" placeholder="Email" required>
 		      </div>
 		      <div>
-		        <input class="mBoxes" pattern=".{6}" name="pwd" type="password" placeholder="Password">
+		        <input class="mBoxes" pattern=".{6}" name="pwd" type="password" placeholder="Password" required>
 		      </div>
 		      <div>
 		        <button type="submit" methos="post" class="mLogin center">Log In</button>
@@ -41,16 +41,16 @@
 		    </form>
 		    <form id="rF" class="registrationForm" action="/register" method="post">
 		      <div>
-		        <input class="mBoxes" name="name" placeholder="Name">
+		        <input class="mBoxes" name="name" placeholder="Name" oninvalid="this.setCustomValidity('Name required')" onvalid="this.setCustomValidity('')" required>
 		      </div>
 		      <div>
-		        <input class="mBoxes" pattern="9[0-9]*.{9}" name="name" placeholder="Phone No">
+		        <input class="mBoxes" pattern="9[0-9]*.{9}" name="no" placeholder="Phone No" oninvalid="this.setCustomValidity('Invalid phone number')" onvalid="this.setCustomValidity('')" required>
 		      </div>
 		      <div>
-		        <input class="mBoxes" pattern=".*@.*[.].*" name="email" placeholder="Email">
+		        <input class="mBoxes" pattern=".*@.*[.].*" name="email" placeholder="Email" oninvalid="this.setCustomValidity('Invalid Email')" onvalid="this.setCustomValidity('')" required>
 		      </div>
 		      <div>
-		        <input class="mBoxes" pattern=".{6}" name="phone" placeholder="Password" type="password">
+		        <input class="mBoxes" pattern=".{6,}" name="pwd" placeholder="Password" type="password" oninvalid="this.setCustomValidity('Minimum 6 characters')" onvalid="this.setCustomValidity('')" required>
 		      </div>
 		      <div>
 		        <button type="submit" methos="post" class="mLogin center">Sign Up</button>
