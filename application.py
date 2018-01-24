@@ -1,6 +1,7 @@
 from flask import *
 from flask_login import LoginManager
 from flask_session import Session
+from flask_compress import Compress
 from pymongo import MongoClient
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -30,6 +31,8 @@ app.secret_key = "rjpj's Ecom website"
 app.config["SESSION_TYPE"] = "filesystem"
 
 Session(app)
+
+Compress(app)
 
 app.secret_key = "rjpj's Ecom website"
 
