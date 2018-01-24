@@ -46,6 +46,10 @@ def index():
 		return render_template("index.html", loggedin = 'false')
 	return render_template("index.html" , loggedin = 'true')
 
+@app.route("/google6209d2c54605fd3a.html")
+def verify():
+	return render_template("google6209d2c54605fd3a.html")
+
 @app.route("/login",methods=["GET","POST"])
 def login():
 	session.clear()
