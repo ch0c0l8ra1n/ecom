@@ -66,7 +66,7 @@ function login(e){
       else{
         var errDiv = document.getElementById('lErrDiv');
         errDiv.style.display = 'none';
-        window.open('http://0.0.0.0',"_self")
+        window.open('/',"_self")
       }
 
     } else {
@@ -74,7 +74,7 @@ function login(e){
     }
   }
   }
-  xhr.open("POST",'http://0.0.0.0/login',true);
+  xhr.open("POST",'/login',true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.send(params);
   
@@ -111,7 +111,7 @@ function register(e){
       else{
         var errDiv = document.getElementById('rErrDiv');
         errDiv.style.display = 'none';
-        window.open('http://0.0.0.0',"_self")
+        window.open('/',"_self")
       }
 
     } else {
@@ -119,7 +119,7 @@ function register(e){
     }
   }
   }
-  xhr.open("POST",'http://0.0.0.0/register',true);
+  xhr.open("POST",'/register',true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.send(params);
 }
