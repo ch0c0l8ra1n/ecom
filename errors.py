@@ -40,9 +40,15 @@ emailDoesNotExists = {
 	'message' : 'Email Does Not Exists'
 }
 
-wrongPassword = {
+invalidPwd = {
 	'success' : False,
 	'code' : 8,
+	'message' : 'Invalid Password'
+}
+
+wrongPassword = {
+	'success' : False,
+	'code' : 9,
 	'message' : 'Wrong Password'
 }
 
