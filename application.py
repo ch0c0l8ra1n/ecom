@@ -41,13 +41,12 @@ app.secret_key = "rjpj's Ecom website"
 def index():
 	if not session.get('user_id'):
 		return render_template("index.html", loggedin = 'false')
-	return render_template("index.html" ,loggedin = 'true')
+	return render_template("index.html" , loggedin = 'true')
 
 @app.route("/login",methods=["GET","POST"])
 def login():
 	session.clear()
 	if request.method=="POST":
-		print(request.form.to_dict())
 
 		if not request.form.get('email') or not re.match( '.*@.*[.].*' , request.form.get('email') ):
 			return jsonify(errors.invalidEmail)

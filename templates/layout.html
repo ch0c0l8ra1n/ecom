@@ -25,7 +25,7 @@
 		      <button onclick="closeModal()" class="xBut">X</button>
 		    </div>
 		    <div>
-		      <img class="logo mLogo center" src="http://www.parajuli.me/static/images/logo.png">
+		      <img class="logo mLogo center" src="{{ url_for('static',filename='images/logo.png') }}">
 		    </div>
 		    <form id="lF" class="loginForm" action="/login" method="post">
 		      <div id="lErrDiv">
@@ -73,7 +73,7 @@
 		<div class="navBar">
 		  <a>
 		    <div class="logo">
-		      <img class="logopng" src="http://www.parajuli.me/static/images/logo.png">
+		      <img class="logopng" src="{{ url_for('static',filename='images/logo.png') }}">
 		    </div>
 		  </a>
 		  <div class="search">
