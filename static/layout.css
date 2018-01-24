@@ -57,8 +57,9 @@ body {
   padding: 5px;
   outline:none;
 }
-.search < .sBox:focus {
-  border: 2px solid grey;
+
+.search form:focus-within {
+  border: 2px solid #333;
 }
 
 
