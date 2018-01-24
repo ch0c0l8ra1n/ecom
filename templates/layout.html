@@ -6,6 +6,9 @@
 		<!-- Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta charset="utf-8">
+		<script>
+			var loggedIn = {{ loggedin }};
+		</script>
 
 
 		<!-- font awesome -->
@@ -24,39 +27,44 @@
 		    <div>
 		      <img class="logo mLogo center" src="http://www.parajuli.me/static/images/logo.png">
 		    </div>
-		    
 		    <form id="lF" class="loginForm" action="/login" method="post">
-		      <div>
-		        <input class="mBoxes" pattern=".*@.*[.].*" name="email" placeholder="Email" required>
+		      <div id="lErrDiv">
+		        <span id="lError">Error: </span>
 		      </div>
 		      <div>
-		        <input class="mBoxes" pattern=".{6}" name="pwd" type="password" placeholder="Password" required>
+		        <input class="mBoxes" id="lUser" pattern=".*@.*[.].*" name="email" placeholder="Email" required>
 		      </div>
 		      <div>
-		        <button type="submit" methos="post" class="mLogin center">Log In</button>
+		        <input class="mBoxes" id="lPwd" pattern=".{6,}" name="pwd" type="password" placeholder="Password" required>
+		      </div>
+		      <div>
+		        <button  onclick="login(event)" methos="post" class="mLogin center">Log In</button>
 		      </div>
 		      <div style="text-align:center">
-		        <span>Don't have an account yet? <a href="javascript:;" onClick="register()" class="regText">Register</a></span>
+		        <span>Don't have an account yet? <a href="javascript:;" onClick="openRegister()" class="regText">Register</a></span>
 		      </div>
 		    </form>
 		    <form id="rF" class="registrationForm" action="/register" method="post">
-		      <div>
-		        <input class="mBoxes" name="name" placeholder="Name" oninvalid="this.setCustomValidity('Name required')" onvalid="this.setCustomValidity('')" required>
+		      <div id="rErrDiv">
+		        <span id="rError">Error: </span>
 		      </div>
 		      <div>
-		        <input class="mBoxes" pattern="9[0-9]*.{9}" name="no" placeholder="Phone No" oninvalid="this.setCustomValidity('Invalid phone number')" onvalid="this.setCustomValidity('')" required>
+		        <input class="mBoxes" id="rName" name="name" placeholder="Name" oninvalid="this.setCustomValidity('Name required')" onvalid="this.setCustomValidity('')" required>
 		      </div>
 		      <div>
-		        <input class="mBoxes" pattern=".*@.*[.].*" name="email" placeholder="Email" oninvalid="this.setCustomValidity('Invalid Email')" onvalid="this.setCustomValidity('')" required>
+		        <input class="mBoxes" id="rNo" pattern="9[0-9]*.{9}" name="no" placeholder="Phone No" oninvalid="this.setCustomValidity('Invalid phone number')" onvalid="this.setCustomValidity('')" required>
 		      </div>
 		      <div>
-		        <input class="mBoxes" pattern=".{6,}" name="pwd" placeholder="Password" type="password" oninvalid="this.setCustomValidity('Minimum 6 characters')" onvalid="this.setCustomValidity('')" required>
+		        <input class="mBoxes" id="rEmail" pattern=".*@.*[.].*" name="email" placeholder="Email" oninvalid="this.setCustomValidity('Invalid Email')" onvalid="this.setCustomValidity('')" required>
 		      </div>
 		      <div>
-		        <button type="submit" methos="post" class="mLogin center">Sign Up</button>
+		        <input class="mBoxes" id="rPwd" pattern=".{6,}" name="pwd" placeholder="Password" type="password" oninvalid="this.setCustomValidity('Minimum 6 characters')" onvalid="this.setCustomValidity('')" required>
+		      </div>
+		      <div>
+		        <button onclick="register(event)" methos="post" class="mLogin center">Sign Up</button>
 		      </div>
 		      <div style="text-align:center">
-		        <span>Aready have an account? <a href="javascript:;" onClick="login()" class="regText">Log In</a></span>
+		        <span>Aready have an account? <a href="javascript:;" onClick="openLogin()" class="regText">Log In</a></span>
 		      </div>
 		    </form>
 		  </div>

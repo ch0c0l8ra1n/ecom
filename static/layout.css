@@ -83,6 +83,7 @@ i{
 #accounts{
   display: flex;
   align-items: stretch;
+  margin: -5px;
 }
 
 #accounts a{
@@ -90,6 +91,8 @@ i{
   padding-bottom: 10px;
   padding-right: 5px;
   padding-left: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
   color: #333;
   text-decoration:none;
   flex-grow: 1;
@@ -236,4 +239,12 @@ i{
 .xBut:hover{
   font-size: 30px;
   border: 2px solid grey;
+}
+
+
+#lErrDiv , #rErrDiv{
+  display: none;
+  border: 2px solid red;
+  padding: 10px;
+  font-size: 20px;
 }

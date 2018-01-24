@@ -1,49 +1,49 @@
 invalidName = {
-	'Success' : False,
-	'Code' : 1,
-	'Message' : 'Invalid Name'
+	'success' : False,
+	'code' : 1,
+	'message' : 'Invalid Name'
 }
 
 invalidNo = {
-	'Success' : False,
-	'Code' : 2,
-	'Message' : 'Invalid Phone Number'
+	'success' : False,
+	'code' : 2,
+	'message' : 'Invalid Phone Number'
 }
 
 invalidEmail = {
-	'Success' : False,
-	'Code' : 3,
-	'Message' : 'Invalid Email'
+	'success' : False,
+	'code' : 3,
+	'message' : 'Invalid Email'
 }
 
 invalidNo = {
-	'Success' : False,
-	'Code' : 4,
-	'Message' : 'Invalid Password'
+	'success' : False,
+	'code' : 4,
+	'message' : 'Invalid Password'
 }
 
 emailAlreadyExists = {
-	'Success' : False,
-	'Code' : 5,
-	'Message' : 'Email already exists'
+	'success' : False,
+	'code' : 5,
+	'message' : 'Email already exists'
 }
 
 noAlreadyExists = {
-	'Success' : False,
-	'Code' : 6,
-	'Message' : 'Phone Number already exists'
+	'success' : False,
+	'code' : 6,
+	'message' : 'Phone Number already exists'
 }
 
 emailDoesNotExists = {
-	'Success' : False,
-	'Code' : 7,
-	'Message' : 'Email Does Not Exists'
+	'success' : False,
+	'code' : 7,
+	'message' : 'Email Does Not Exists'
 }
 
 wrongPassword = {
-	'Success' : False,
-	'Code' : 8,
-	'Message' : 'Wrong Password'
+	'success' : False,
+	'code' : 8,
+	'message' : 'Wrong Password'
 }
 
 
